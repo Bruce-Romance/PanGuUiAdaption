@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+
 import dimens.constants.DimenHeight;
 import dimens.constants.DimenWidths;
 
@@ -56,7 +57,7 @@ public class MakeUtils {
             }
             //生成高度DP
             for (int j = 0; j <= designHeight; j++) {
-                dpValue = px2dip((float) j, dimenHeight.getShHeightDp(),designHeight);
+                dpValue = px2dip((float) j, dimenHeight.getShHeightDp(), designHeight);
                 temp = String.format(XML_DIMEN_Y_LINE, "", j, dpValue);
                 sb.append(temp);
             }
@@ -72,16 +73,15 @@ public class MakeUtils {
 
     /**
      * 生成的目标文件夹
-     * 只需传宽进来就行
      *
      * @param buildDir 生成的目标文件夹
      */
-    public static void makeAll(int designWidth, int designHeight, DimenWidths dimenWidths,DimenHeight dimenHeight, String buildDir) {
+    public static void makeAll(int designWidth, int designHeight, DimenWidths dimenWidths, DimenHeight dimenHeight, String buildDir) {
         try {
             //生成规则
             final String folderName;
             if (dimenWidths.getSwWidthDp() > 0) {
-                //适配Android 3.2+
+                //取宽度的名字
                 folderName = "values-sw" + dimenWidths.getSwWidthDp() + "dp";
             } else {
                 return;
@@ -95,7 +95,7 @@ public class MakeUtils {
 
             //生成values文件
             FileOutputStream fos = new FileOutputStream(file.getAbsolutePath() + File.separator + XML_NAME);
-            fos.write(makeAllDimens(dimenWidths,dimenHeight, designWidth, designHeight).getBytes());
+            fos.write(makeAllDimens(dimenWidths, dimenHeight, designWidth, designHeight).getBytes());
             fos.flush();
             fos.close();
 
