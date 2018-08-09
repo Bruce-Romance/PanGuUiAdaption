@@ -87,8 +87,10 @@ public class MakeUtils {
                 return;
             }
 
-            //生成目标目录
-            File file = new File(buildDir + File.separator + folderName);
+            //生成目标目录(Windows系统下）
+//            File file = new File(buildDir + File.separator + folderName);
+            //生成目标目录(Mac系统下）
+            File file = new File("/Users/yangzw/" + folderName);
             if (!file.exists()) {
                 file.mkdirs();
             }

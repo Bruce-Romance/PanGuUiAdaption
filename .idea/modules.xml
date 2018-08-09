@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dimens_sw.iml" filepath="$PROJECT_DIR$/dimens_sw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PanGuUiAdaption.iml" filepath="$PROJECT_DIR$/PanGuUiAdaption.iml" />
     </modules>
   </component>
 </project>
